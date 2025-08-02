@@ -348,9 +348,11 @@ body {
 .project-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
-    gap: 2rem;
+    gap: 1.5rem;
     margin-top: 3rem;
     align-items: start;
+    justify-content: center;
+    padding: 1rem;
 }
 
 .project-card {
@@ -398,8 +400,54 @@ body {
    
 }
 
-.project-image.IsAkıs-image {
-    background-image: url("assets/images/github-mark-white.png");
+.project-image.Mack-image {
+    background-image: url("assets/images/galeri.png"); /* İlk resim */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: background-image 0.3s ease;
+}
+.project-card:hover .project-image.project-image.Mack-image {
+    background-size: contain;  
+    width: 100%; height: 70%;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4);
+    z-index: 0;
+}
+.mini-image-gallery {
+  display: flex;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  margin: 1rem 1.5rem;
+  justify-content: center;
+}
+
+.mini-image-gallery img {
+  width: 100px;
+  height: auto;
+  border-radius: 8px;
+  box-shadow: 0 2px 8px rgba(0,0,0,0.2);
+  transition: transform 0.3s ease;
+}
+
+.mini-image-gallery img:hover {
+  transform: scale(1.1);
+}
+
+.project-image.Hast-image {
+    background-image: url("assets/images/Hastane.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+
+.project-image.sah-image {
+    background-image: url("assets/images/sahara.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
+.project-image.sip-image {
+    background-image: url("assets/images/bır\ \(1\).png");
     background-size: cover;
     background-position: center;
     background-repeat: no-repeat;

@@ -91,22 +91,54 @@
                     <span>C#</span>
                 </div>
             </div>
-            <div class="project-card">
-                <a href="https://github.com/TmSmob/IsTakipSistemi-mvc-"><div class="project-image IsAkıs-image"></div></a>
-                
-                <h3>İş Takip Sistemi</h3>
-                <p>.Net İle Geliştirilmiş İş Takip Sistemi</p>
+           <div class="project-card">
+  <div class="project-image Mack-image"></div>
+
+  <div class="mini-image-gallery">
+    <img src="assets/images/anas.png" alt="">
+    <img src="assets/images/fran.png" alt="">
+    <img src="assets/images/ilet.png" alt="">
+    <img src="assets/images/hakk.png" alt="">
+  </div>
+
+  <h3>Kahve Firması Web Sitesi</h3>
+  <p>Mackbear için hazırladığım Web Sayfası</p>
+  <div class="project-tags">
+    <span>HTML 5</span>
+    <span>CSS 3</span>
+    <span>Javascript</span>
+    <span>Bootstrap 5</span>
+  </div>
+    </div>
+        
+         <div class="project-card">
+                <div class="project-image Hast-image"></div>
+                <h3>Hastane Uygulaması</h3>
+                <p>Sıra Takip Ve Sırası Geçen Hastlar </p>
                 <div class="project-tags">
-                    <span>Asp.Net MVC</span>
-                    <span>Entity Framework</span>
-                    <span>MS SQL Server</span>
-                    <span>HTML 5</span>
+                   <span>HTML 5</span>
                     <span>CSS 3</span>
-                    <span>C#</span>
-                    <span>Bootstrap 5</span>
+                    <span>Javascript</span>
                 </div>
-            </div>
         </div>
+          <div class="project-card">
+                <div class="project-image sah-image"></div>
+                <h3>Web Site Denemesi</h3>
+                <div class="project-tags">
+                   <span>HTML 5</span>
+                    <span>CSS 3</span>
+                </div>
+        </div>
+          <div class="project-card">
+                <div class="project-image sip-image"></div>
+                <h3>Fabrikalar İçin Sipariş Kolaylaştırma</h3>
+                <div class="project-tags">
+                   <span>C# Form</span>
+                </div>
+        </div>
+        </div>
+</div>
+          
     </section>
 
     <section id="certificates" class="certificates">
@@ -290,6 +322,17 @@
                 link.href = `${baseUrl}?search=${encodeURIComponent(fileName)}`;
             });
         });
+         document.addEventListener('DOMContentLoaded', () => {
+    const thumbnails = document.querySelectorAll('.mini-image-gallery img');
+    const displayArea = document.querySelector('.project-image.Mack-image');
+
+    thumbnails.forEach(thumb => {
+      thumb.addEventListener('click', () => {
+        const imageUrl = thumb.getAttribute('src');
+        displayArea.style.backgroundImage = `url("${imageUrl}")`;
+      });
+    });
+  });
     </script>
 </body>
 </html> 
