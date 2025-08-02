@@ -350,25 +350,60 @@ body {
     grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
     gap: 2rem;
     margin-top: 3rem;
+    align-items: start;
 }
 
 .project-card {
     background: rgba(255, 255, 255, 0.05);
     border-radius: 15px;
     overflow: hidden;
-    transition: transform 0.3s ease;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
+    justify-content: flex-start;
+    transition: all 0.4s ease;
 }
 
 .project-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 0 30px var(--glow-color);
 }
-
 .project-image {
     height: 200px;
     background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    transition: height 0.5s ease, box-shadow 0.5s ease;
+    overflow: hidden; /* taşmaları engelle */
+    flex-shrink: 0;
+}  
+
+.project-image.piyes-image {
+    background-image: url("assets/images/piyes.jpg");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
 }
 
+/* Hover efekti */
+.project-card:hover .project-image {
+    height: 500px;
+    box-shadow: 0 20px 30px rgba(0, 0, 0, 0.4);
+    z-index: 1;
+}
+
+.project-image.Foes-image {
+    background-image: url("assets/images/foes.jpg"); /* senin yüklediğin resmin yolu */
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+   
+}
+
+.project-image.IsAkıs-image {
+    background-image: url("assets/images/github-mark-white.png");
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+}
 .project-card h3 {
     padding: 1.5rem 1.5rem 0.5rem;
 }
@@ -644,16 +679,6 @@ body {
     transition: transform 0.3s ease;
     z-index: -1;
 }
-
-.footer-social .social-link:hover {
-    color: white;
-    transform: translateY(-3px);
-}
-
-.footer-social .social-link:hover::before {
-    transform: scale(1.5);
-}
-
 .footer-bottom {
     text-align: center;
     padding-top: 2rem;
