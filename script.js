@@ -123,6 +123,38 @@ projectCards.forEach(card => {
     });
 });
 
+// Project card external links
+projectCards.forEach(card => {
+    const link = card.dataset.link;
+
+    if (!link) {
+        return;
+    }
+
+    card.classList.add('has-link');
+    card.setAttribute('role', 'link');
+    card.setAttribute('tabindex', '0');
+
+    const openProjectLink = () => {
+        window.open(link, '_blank', 'noopener,noreferrer');
+    };
+
+    card.addEventListener('click', (e) => {
+        if (e.target.closest('.mini-image-gallery')) {
+            return;
+        }
+
+        openProjectLink();
+    });
+
+    card.addEventListener('keydown', (e) => {
+        if (e.key === 'Enter' || e.key === ' ') {
+            e.preventDefault();
+            openProjectLink();
+        }
+    });
+});
+
 // Contact form submission
 const contactForm = document.querySelector('.contact-form');
 

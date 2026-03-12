@@ -364,11 +364,34 @@ body {
     flex-direction: column;
     justify-content: flex-start;
     transition: all 0.4s ease;
+    position: relative;
 }
 
 .project-card:hover {
     transform: translateY(-10px);
     box-shadow: 0 0 30px var(--glow-color);
+}
+
+.project-card.has-link {
+    cursor: pointer;
+}
+
+.project-card.has-link::after {
+    content: attr(data-link-label) " linki";
+    position: absolute;
+    top: 12px;
+    right: 12px;
+    background: linear-gradient(45deg, var(--primary-color), var(--secondary-color));
+    color: #ffffff;
+    border: 1px solid rgba(255, 255, 255, 0.25);
+    box-shadow: 0 0 12px rgba(108, 99, 255, 0.25);
+    border-radius: 999px;
+    padding: 0.3rem 0.7rem;
+    font-size: 0.75rem;
+    font-weight: 600;
+    letter-spacing: 0.02em;
+    z-index: 5;
+    pointer-events: none;
 }
 .project-image {
     height: 200px;
